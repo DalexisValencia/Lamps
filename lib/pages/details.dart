@@ -19,8 +19,8 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height*0.45;
-    return Stack( 
+    var height = MediaQuery.of(context).size.height * 0.45;
+    return Stack(
       fit: StackFit.expand,
       children: <Widget>[
         Positioned(
@@ -31,7 +31,7 @@ class _DetailPageState extends State<DetailPage> {
             width: MediaQuery.of(context).size.width,
             height: height + 20,
             child: Container(
-              padding: EdgeInsets.fromLTRB(20,0,0,5),
+              padding: EdgeInsets.fromLTRB(20, 0, 0, 5),
               alignment: Alignment.bottomLeft,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,15 +39,24 @@ class _DetailPageState extends State<DetailPage> {
                 children: <Widget>[
                   Text(
                     "LittMcMann",
-                    style: Theme.of(context).textTheme.body2.copyWith(fontSize:13),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2
+                        .copyWith(fontSize: 13),
                   ),
                   Text(
                     "Theo II",
-                    style: Theme.of(context).textTheme.headline.copyWith(fontWeight:FontWeight.bold),
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline5
+                        .copyWith(fontWeight: FontWeight.bold),
+                  ),
                   Text(
                     "Table Lamp",
-                    style: Theme.of(context).textTheme.caption.copyWith(color:Theme.of(context).primaryColorDark),
+                    style: Theme.of(context)
+                        .textTheme
+                        .caption
+                        .copyWith(color: Theme.of(context).primaryColorDark),
                   )
                 ],
               ),
@@ -58,112 +67,116 @@ class _DetailPageState extends State<DetailPage> {
           top: 0,
           right: 0,
           child: Container(
-            width: MediaQuery.of(context).size.width,
-            transform: Matrix4.translationValues(40.0, 0.0, 0.0),
-            height: height,
-            child: RotatedBox(
-              quarterTurns: -3,
-              child: ClipPath(
-              clipper: TriangleClipper(),
+              width: MediaQuery.of(context).size.width,
+              transform: Matrix4.translationValues(40.0, 0.0, 0.0),
+              height: height,
               child: RotatedBox(
-                quarterTurns: 3,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.contain,
-                        image: ExactAssetImage('assets/img-1.png')
-                        //image: new NetworkImage('https://static.boredpanda.com/blog/wp-content/uploads/2015/03/Hyperrealistic-paintings-sweet-as-honey4__880.jpg')
-                      )
-                    ),
-                  ),
-              )
-            ),
-            )
-          ),
+                quarterTurns: -3,
+                child: ClipPath(
+                    clipper: TriangleClipper(),
+                    child: RotatedBox(
+                      quarterTurns: 3,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.contain,
+                                image: ExactAssetImage('assets/img-1.png')
+                                //image: new NetworkImage('https://static.boredpanda.com/blog/wp-content/uploads/2015/03/Hyperrealistic-paintings-sweet-as-honey4__880.jpg')
+                                )),
+                      ),
+                    )),
+              )),
         ),
         Container(
-          // color: Colors.grey,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.40,
-           child: SizedBox(
-             width: double.infinity,
+            // color: Colors.grey,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.40,
+            child: SizedBox(
+              width: double.infinity,
               child: MainMenu(),
-           )
-        ),
+            )),
         Positioned(
           top: height + 20,
-          height:MediaQuery.of(context).size.height *0.50,
-          width:MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.50,
+          width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(left:25, right: 25, top: 15),
+              padding: EdgeInsets.only(left: 25, right: 25, top: 15),
               child: Column(
                 children: <Widget>[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      IconAndText(nameIcon: Icons.vibration, iconText: '27´ x 12´',),
-                      IconAndText(nameIcon: Icons.archive, iconText: 'ALL VIEW',)
+                      IconAndText(
+                        nameIcon: Icons.vibration,
+                        iconText: '27´ x 12´',
+                      ),
+                      IconAndText(
+                        nameIcon: Icons.archive,
+                        iconText: 'ALL VIEW',
+                      )
                     ],
                   ),
                   IconAndText(nameIcon: Icons.palette, iconText: 'black'),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      IconAndText(nameIcon: Icons.poll, iconText: 'dark marble',),
+                      IconAndText(
+                        nameIcon: Icons.poll,
+                        iconText: 'dark marble',
+                      ),
                       Text(
-                      "\$124.00",
-                      style: Theme.of(context).textTheme.headline.copyWith(fontWeight: FontWeight.bold, fontSize: 17),)
+                        "\$124.00",
+                        style: Theme.of(context).textTheme.headline5.copyWith(
+                            fontWeight: FontWeight.bold, fontSize: 17),
+                      )
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(top:15),
+                    margin: EdgeInsets.only(top: 15),
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.13,
-                    child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi. Vestibulum ut Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi."),
+                    child: Text(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi. Vestibulum ut Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi."),
                   ),
                   Container(
                     alignment: Alignment.topLeft,
-                    padding: EdgeInsets.only(top:15),
-                      child: Text("Lorem ipsum dolor sit amet, consectetur adipi"),
+                    padding: EdgeInsets.only(top: 15),
+                    child:
+                        Text("Lorem ipsum dolor sit amet, consectetur adipi"),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top:40),
+                    padding: EdgeInsets.only(top: 40),
                     width: MediaQuery.of(context).size.width - 40,
                     child: RaisedButton(
                       elevation: 0,
                       color: Theme.of(context).backgroundColor,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)
-                      ),
+                          borderRadius: BorderRadius.circular(25)),
                       padding: EdgeInsets.all(15),
                       //padding: EdgeInsets.fromLTRB(0, 10, 0,10),
-                      onPressed: (){},
+                      onPressed: () {},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
                             "ADD TO",
-                            style: Theme.of(context).textTheme.body1.copyWith(
-                              color: Theme.of(context).primaryColor
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                .copyWith(
+                                    color: Theme.of(context).primaryColor),
                           ),
-                          SizedBox( width: 3 ),
-                          Icon(
-                            Icons.enhanced_encryption,
-                            size: 18,
-                            color: Theme.of(context).primaryColor
-                          )
+                          SizedBox(width: 3),
+                          Icon(Icons.enhanced_encryption,
+                              size: 18, color: Theme.of(context).primaryColor)
                         ],
                       ),
-                      
                     ),
                   )
-                  
                 ],
               ),
             ),
-            
           ),
           // child: Container(
           //   color: Colors.blue,
@@ -188,7 +201,7 @@ class _DetailPageState extends State<DetailPage> {
     //           image: new NetworkImage('https://static.boredpanda.com/blog/wp-content/uploads/2015/03/Hyperrealistic-paintings-sweet-as-honey4__880.jpg')
     //         )
     //       ),
-          
+
     //     ),
     //   ),
     //   )
@@ -196,19 +209,21 @@ class _DetailPageState extends State<DetailPage> {
   }
 }
 
-class TriangleClipper  extends CustomClipper<Path>{
+class TriangleClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
 
-    path.lineTo(0, size.height*0.55);
+    path.lineTo(0, size.height * 0.55);
     //path.quadraticBezierTo(x1, y1, x2, y2)
-      path.quadraticBezierTo(size.width*0.18, size.height*0.42, size.width*0.48, size.height*0.56);
-      path.quadraticBezierTo(size.width*0.95, size.height*0.75, size.width,100);
-      path.quadraticBezierTo(size.height + 200, -size.height, -size.width, 0);
+    path.quadraticBezierTo(size.width * 0.18, size.height * 0.42,
+        size.width * 0.48, size.height * 0.56);
+    path.quadraticBezierTo(
+        size.width * 0.95, size.height * 0.75, size.width, 100);
+    path.quadraticBezierTo(size.height + 200, -size.height, -size.width, 0);
 
     path.close();
-    return path; 
+    return path;
   }
 
   @override
@@ -232,7 +247,10 @@ class IconAndText extends StatelessWidget {
         ),
         Text(
           iconText,
-          style: Theme.of(context).textTheme.caption.copyWith(color:Theme.of(context).primaryColorDark),
+          style: Theme.of(context)
+              .textTheme
+              .caption
+              .copyWith(color: Theme.of(context).primaryColorDark),
         )
       ],
     );
