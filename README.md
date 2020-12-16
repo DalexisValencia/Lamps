@@ -2,12 +2,12 @@
 
 # Simple Lamps App
 
-This is a simple app with two views with Home and detail. 
+This is a simple app with two views: Home and detail. 
 
 ## HOME
 Is the first screen that the user sees.
 
-This view has a background image that changes when the slider change.
+This view has a background image that changes when the slider change, putting the product image as a background
 
 <img src="https://github.com/DalexisValencia/SecondTest-flutter-app/blob/master/video/Home.jpg" alt="drawing" width="450"/>
 
@@ -15,11 +15,6 @@ This view has a background image that changes when the slider change.
 In this view the user can see all product detail.
 
 <img src="https://github.com/DalexisValencia/SecondTest-flutter-app/blob/master/video/Detail.jpg" alt="drawing" width="450"/>
-
-## Register View
-This view has three input fields, user, emai and password. All have a simple validation. 
-
-<img src="https://github.com/DalexisValencia/third_flutter_app-login-/blob/master/video/register-view.jpg" alt="drawing" width="450"/>
 
 ## Preview:
 
