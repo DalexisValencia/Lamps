@@ -7,8 +7,8 @@ List<ProductsModel> lamps = [
     thumbnail: 'assets/detail-1.png',
   ),
   ProductsModel(
-    name: 'Theo 1',
-    imageMain: 'assets/img-1.png',
-    thumbnail: 'assets/detail-1.png',
+    name: 'Theo 2',
+    imageMain: 'assets/img-2.png',
+    thumbnail: 'assets/detail-2.png',
   ),
 ];

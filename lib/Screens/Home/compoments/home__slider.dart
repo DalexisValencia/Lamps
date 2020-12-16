@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:second_test/Screens/Home/compoments/home__productCard.dart';
-import 'package:second_test/interfaces/products.dart';
 import 'package:second_test/list/products.dart';
 
 class HomeSlider extends StatelessWidget {
@@ -27,9 +26,6 @@ class HomeSlider extends StatelessWidget {
           aspectRatio: 1,
           viewportFraction: 1.0,
           onPageChanged: (item) => onChangeOutPut(item),
-          // onPageChanged: (item) {
-          //   _changeMainImage(products[item].imageMain);
-          // },
           items: lamps.map((product) {
             return Builder(builder: (BuildContext context) {
               return Container(
