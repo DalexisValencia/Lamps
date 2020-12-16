@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:second_test/Screens/Details/components/details__iconAndText.dart';
 import 'package:second_test/Screens/Details/components/details__shape.dart';
 import 'package:second_test/interfaces/products.dart';
-import 'package:second_test/widgets/menu.dart';
+import 'package:second_test/widgets/screens__menu.dart';
 
 class DetailPageScaffold extends StatelessWidget {
   final ProductsModel product;
@@ -13,12 +13,16 @@ class DetailPageScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: DetailPage(),
+      body: DetailPage(product: product),
     );
   }
 }
 
 class DetailPage extends StatefulWidget {
+  final ProductsModel product;
+  DetailPage({
+    this.product,
+  });
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -44,13 +48,13 @@ class _DetailPageState extends State<DetailPage> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Text(
-                    "LittMcMann",
+                    widget.product.maker,
                     style: Theme.of(context).textTheme.bodyText2.copyWith(
                           fontSize: 13,
                         ),
                   ),
                   Text(
-                    "Theo II",
+                    widget.product.name,
                     style: Theme.of(context).textTheme.headline5.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -83,7 +87,9 @@ class _DetailPageState extends State<DetailPage> {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.contain,
-                        image: ExactAssetImage('assets/img-1.png'),
+                        image: ExactAssetImage(
+                          widget.product.imageMain,
+                        ),
                       ),
                     ),
                   ),
@@ -98,7 +104,9 @@ class _DetailPageState extends State<DetailPage> {
           height: MediaQuery.of(context).size.height * 0.40,
           child: SizedBox(
             width: double.infinity,
-            child: MainMenu(),
+            child: MainMenu(
+              goBack: true,
+            ),
           ),
         ),
         Positioned(
@@ -119,7 +127,7 @@ class _DetailPageState extends State<DetailPage> {
                     children: <Widget>[
                       IconAndText(
                         nameIcon: Icons.vibration,
-                        iconText: '27´ x 12´',
+                        iconText: widget.product.size, // '27´ x 12´',
                       ),
                       IconAndText(
                         nameIcon: Icons.archive,
@@ -129,17 +137,17 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   IconAndText(
                     nameIcon: Icons.palette,
-                    iconText: 'black',
+                    iconText: widget.product.color,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconAndText(
                         nameIcon: Icons.poll,
-                        iconText: 'dark marble',
+                        iconText: widget.product.woodType,
                       ),
                       Text(
-                        "\$124.00",
+                        "\$${widget.product.price}",
                         style: Theme.of(context).textTheme.headline5.copyWith(
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
@@ -152,16 +160,16 @@ class _DetailPageState extends State<DetailPage> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.13,
                     child: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi. Vestibulum ut Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi.",
+                      widget.product.description,
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    padding: EdgeInsets.only(top: 15),
-                    child: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipi",
-                    ),
-                  ),
+                  // Container(
+                  //   alignment: Alignment.topLeft,
+                  //   padding: EdgeInsets.only(top: 15),
+                  //   child: Text(
+                  //     "Lorem ipsum dolor sit amet, consectetur adipi",
+                  //   ),
+                  // ),
                   Container(
                     padding: EdgeInsets.only(top: 40),
                     width: MediaQuery.of(context).size.width - 40,
@@ -169,9 +177,9 @@ class _DetailPageState extends State<DetailPage> {
                       elevation: 0,
                       color: Theme.of(context).backgroundColor,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25)),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
                       padding: EdgeInsets.all(15),
-                      //padding: EdgeInsets.fromLTRB(0, 10, 0,10),
                       onPressed: () {},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

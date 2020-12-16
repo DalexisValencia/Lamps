@@ -75,7 +75,7 @@ class ProductCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  product.price,
+                  "\$${product.price}",
                   style: Theme.of(context).textTheme.headline6.copyWith(
                         fontWeight: FontWeight.bold,
                       ),

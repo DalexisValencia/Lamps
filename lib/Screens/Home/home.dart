@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:second_test/Screens/Home/compoments/home__slider.dart';
 import 'package:second_test/list/products.dart';
-import 'package:second_test/widgets/menu.dart';
+import 'package:second_test/widgets/screens__menu.dart';
 
 class HomePageScaffold extends StatelessWidget {
   @override
@@ -38,7 +38,9 @@ class HomePageState extends State<HomePage> {
             height: MediaQuery.of(context).size.height - sizeUnderBox,
             child: SizedBox(
               width: double.infinity,
-              child: MainMenu(),
+              child: MainMenu(
+                goBack: false,
+              ),
             ),
           ),
           Positioned(

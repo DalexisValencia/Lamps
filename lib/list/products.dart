@@ -8,6 +8,10 @@ List<ProductsModel> lamps = [
     description:
         'LittMcMan Theo it is a  classic model of a table lamp, will fi any chic and elegant interior',
     price: '92,00',
+    maker: 'LittMcMann',
+    size: '27´ x 12´',
+    color: 'Black',
+    woodType: 'dark marble',
   ),
   ProductsModel(
     name: 'Theo 2',
@@ -16,5 +20,9 @@ List<ProductsModel> lamps = [
     description:
         'LittMcMan Theo it is a  classic model of a table lamp, will fi any chic and elegant interior',
     price: '102,00',
-  ),
+    maker: 'MardeKit',
+    size: '27´ x 12´',
+    color: 'Black',
+    woodType: 'dark marble',
+  )
 ];
