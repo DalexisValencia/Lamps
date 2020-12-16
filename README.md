@@ -7,7 +7,7 @@ This is a simple app with two views: Home and detail.
 ## HOME
 Is the first screen that the user sees.
 
-This view has a background image that changes when the slider change, putting the product image as a background
+This view has a background image that changes when the slider change, putting the product image as background
 
 <img src="https://github.com/DalexisValencia/SecondTest-flutter-app/blob/master/video/Home.jpg" alt="drawing" width="450"/>
 
@@ -22,6 +22,15 @@ In this view the user can see all product detail.
 
 
 **Is the gif in bad quality? i invite you to visit [this link](https://youtu.be/h5YPQFpaBow)**
+
+
+## Technical Details:
+
+```
+Flutter version 1.22.3
+Dart version 2.10.3
+```
+
 
 ## Getting Started
 
