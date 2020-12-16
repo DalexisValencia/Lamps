@@ -1,6 +1,32 @@
-# second_test
+<img src="https://github.com/DalexisValencia/logos-for-readme/blob/main/flutter/flutter-dart-830.png" alt="drawing" width="450"/>
 
-A new Flutter project.
+# Simple Lamps App
+
+This is a simple app with two views with Home and detail. 
+
+## HOME
+Is the first screen that the user sees.
+
+This view has a background image that changes when the slider change.
+
+<img src="https://github.com/DalexisValencia/SecondTest-flutter-app/blob/master/video/Home.jpg" alt="drawing" width="450"/>
+
+## DETAILS
+In this view the user can see all product detail.
+
+<img src="https://github.com/DalexisValencia/SecondTest-flutter-app/blob/master/video/Detail.jpg" alt="drawing" width="450"/>
+
+## Register View
+This view has three input fields, user, emai and password. All have a simple validation. 
+
+<img src="https://github.com/DalexisValencia/third_flutter_app-login-/blob/master/video/register-view.jpg" alt="drawing" width="450"/>
+
+## Preview:
+
+![Alt Text](https://github.com/DalexisValencia/SecondTest-flutter-app/blob/master/video/preview.gif)
+
+
+**Is the gif in bad quality? i invite you to visit [this link](https://youtu.be/h5YPQFpaBow)**
 
 ## Getting Started
 
