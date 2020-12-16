@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:second_test/Screens/Details/components/details__iconAndText.dart';
+import 'package:second_test/Screens/Details/components/details__shape.dart';
+import 'package:second_test/interfaces/products.dart';
 import 'package:second_test/widgets/menu.dart';
 
 class DetailPageScaffold extends StatelessWidget {
+  final ProductsModel product;
+  DetailPageScaffold({
+    this.product,
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +34,6 @@ class _DetailPageState extends State<DetailPage> {
           top: 0,
           left: 0,
           child: Container(
-            //color: Colors.grey[300],
             width: MediaQuery.of(context).size.width,
             height: height + 20,
             child: Container(
@@ -76,8 +82,9 @@ class _DetailPageState extends State<DetailPage> {
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          fit: BoxFit.contain,
-                          image: ExactAssetImage('assets/img-1.png')),
+                        fit: BoxFit.contain,
+                        image: ExactAssetImage('assets/img-1.png'),
+                      ),
                     ),
                   ),
                 ),
@@ -190,81 +197,6 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
           ),
-          // child: Container(
-          //   color: Colors.blue,
-          // ),
-        )
-      ],
-    );
-    // return Container(
-    //   transform: Matrix4.translationValues(20.0, 0.0, 0.0),
-    //   //color: Colors.blueAccent,
-    //   height: MediaQuery.of(context).size.height / 2,
-    //   //child: Text("Separarlo por componentes"),
-    //   child: RotatedBox(
-    //     quarterTurns: -3,
-    //     child: ClipPath(
-    //     clipper: TriangleClipper(),
-    //     child: Container(
-    //       decoration: BoxDecoration(
-    //         color: Colors.white,
-    //         image: DecorationImage(
-    //           fit: BoxFit.fitWidth,
-    //           image: new NetworkImage('https://static.boredpanda.com/blog/wp-content/uploads/2015/03/Hyperrealistic-paintings-sweet-as-honey4__880.jpg')
-    //         )
-    //       ),
-
-    //     ),
-    //   ),
-    //   )
-    // );
-  }
-}
-
-class TriangleClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-
-    path.lineTo(0, size.height * 0.55);
-    //path.quadraticBezierTo(x1, y1, x2, y2)
-    path.quadraticBezierTo(size.width * 0.18, size.height * 0.42,
-        size.width * 0.48, size.height * 0.56);
-    path.quadraticBezierTo(
-        size.width * 0.95, size.height * 0.75, size.width, 100);
-    path.quadraticBezierTo(size.height + 200, -size.height, -size.width, 0);
-
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper oldcleapper) => true;
-}
-
-class IconAndText extends StatelessWidget {
-  final IconData nameIcon;
-  final String iconText;
-  IconAndText({
-    this.nameIcon,
-    this.iconText,
-  });
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Icon(
-          nameIcon,
-          color: Theme.of(context).primaryColorDark,
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          iconText,
-          style: Theme.of(context).textTheme.caption.copyWith(
-                color: Theme.of(context).primaryColorDark,
-              ),
         )
       ],
     );

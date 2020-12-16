@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:second_test/Screens/Details/details.dart';
+import 'package:second_test/interfaces/products.dart';
 
 class ProductCard extends StatelessWidget {
-  final String name;
-  final String thumbnail;
-  ProductCard({
-    this.name,
-    this.thumbnail,
-  });
+  final ProductsModel product;
+  ProductCard({this.product});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -37,7 +35,7 @@ class ProductCard extends StatelessWidget {
                           ),
                     ),
                     Text(
-                      name,
+                      product.name,
                       style: Theme.of(context).textTheme.headline6.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
@@ -56,7 +54,9 @@ class ProductCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     //color: Colors.red,
                     image: DecorationImage(
-                      image: new ExactAssetImage(thumbnail),
+                      image: new ExactAssetImage(
+                        product.thumbnail,
+                      ),
                     ),
                   ),
                 )
@@ -65,7 +65,7 @@ class ProductCard extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(right: 20, top: 12),
               child: Text(
-                "LittMcMan Theo it is a  classic model of a table lamp, will fi any chic and elegant interior",
+                product.description,
                 style: TextStyle(
                   color: Colors.grey,
                 ),
@@ -75,7 +75,7 @@ class ProductCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "92,00",
+                  product.price,
                   style: Theme.of(context).textTheme.headline6.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -85,14 +85,17 @@ class ProductCard extends StatelessWidget {
                   elevation: 0,
                   padding: EdgeInsets.fromLTRB(25, 15, 25, 15),
                   onPressed: () {
-                    // Navigator.of(context).push(
-                    //   _createPage(
-                    //     DetailPageScaffold(),
-                    //   ),
-                    // );
+                    Navigator.of(context).push(
+                      _createPage(
+                        DetailPageScaffold(
+                          product: product,
+                        ),
+                      ),
+                    );
                   },
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50)),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
                   child: Text(
                     "DETAILS",
                     style: TextStyle(
@@ -109,20 +112,20 @@ class ProductCard extends StatelessWidget {
   }
 }
 
-// Route _createPage(child) {
-//   return PageRouteBuilder(
-//       pageBuilder: (BuildContext context, Animation animation,
-//               Animation secondaryAnimation) =>
-//           child,
-//       transitionsBuilder: (BuildContext context, Animation animation,
-//           Animation secondaryAnimation, child) {
-//         //return child;
-//         return SlideTransition(
-//           position: new Tween<Offset>(
-//             begin: const Offset(-1.0, 0.0),
-//             end: Offset.zero,
-//           ).animate(animation),
-//           child: child,
-//         );
-//       });
-// }
+Route _createPage(child) {
+  return PageRouteBuilder(
+      pageBuilder: (BuildContext context, Animation animation,
+              Animation secondaryAnimation) =>
+          child,
+      transitionsBuilder: (BuildContext context, Animation animation,
+          Animation secondaryAnimation, child) {
+        //return child;
+        return SlideTransition(
+          position: new Tween<Offset>(
+            begin: const Offset(-1.0, 0.0),
+            end: Offset.zero,
+          ).animate(animation),
+          child: child,
+        );
+      });
+}

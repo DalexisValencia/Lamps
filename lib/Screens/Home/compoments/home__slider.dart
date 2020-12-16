@@ -34,8 +34,7 @@ class HomeSlider extends StatelessWidget {
                   bottom: 5,
                 ),
                 child: ProductCard(
-                  name: product.name,
-                  thumbnail: product.thumbnail,
+                  product: product,
                 ),
               );
             });
