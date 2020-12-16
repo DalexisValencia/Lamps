@@ -39,24 +39,21 @@ class _DetailPageState extends State<DetailPage> {
                 children: <Widget>[
                   Text(
                     "LittMcMann",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText2
-                        .copyWith(fontSize: 13),
+                    style: Theme.of(context).textTheme.bodyText2.copyWith(
+                          fontSize: 13,
+                        ),
                   ),
                   Text(
                     "Theo II",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline5
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.headline5.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                   Text(
                     "Table Lamp",
-                    style: Theme.of(context)
-                        .textTheme
-                        .caption
-                        .copyWith(color: Theme.of(context).primaryColorDark),
+                    style: Theme.of(context).textTheme.caption.copyWith(
+                          color: Theme.of(context).primaryColorDark,
+                        ),
                   )
                 ],
               ),
@@ -67,41 +64,47 @@ class _DetailPageState extends State<DetailPage> {
           top: 0,
           right: 0,
           child: Container(
-              width: MediaQuery.of(context).size.width,
-              transform: Matrix4.translationValues(40.0, 0.0, 0.0),
-              height: height,
-              child: RotatedBox(
-                quarterTurns: -3,
-                child: ClipPath(
-                    clipper: TriangleClipper(),
-                    child: RotatedBox(
-                      quarterTurns: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.contain,
-                                image: ExactAssetImage('assets/img-1.png')
-                                //image: new NetworkImage('https://static.boredpanda.com/blog/wp-content/uploads/2015/03/Hyperrealistic-paintings-sweet-as-honey4__880.jpg')
-                                )),
-                      ),
-                    )),
-              )),
+            width: MediaQuery.of(context).size.width,
+            transform: Matrix4.translationValues(40.0, 0.0, 0.0),
+            height: height,
+            child: RotatedBox(
+              quarterTurns: -3,
+              child: ClipPath(
+                clipper: TriangleClipper(),
+                child: RotatedBox(
+                  quarterTurns: 3,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          fit: BoxFit.contain,
+                          image: ExactAssetImage('assets/img-1.png')),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
         Container(
-            // color: Colors.grey,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.40,
-            child: SizedBox(
-              width: double.infinity,
-              child: MainMenu(),
-            )),
+          // color: Colors.grey,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.40,
+          child: SizedBox(
+            width: double.infinity,
+            child: MainMenu(),
+          ),
+        ),
         Positioned(
           top: height + 20,
           height: MediaQuery.of(context).size.height * 0.50,
           width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(left: 25, right: 25, top: 15),
+              padding: EdgeInsets.only(
+                left: 25,
+                right: 25,
+                top: 15,
+              ),
               child: Column(
                 children: <Widget>[
                   Row(
@@ -117,7 +120,10 @@ class _DetailPageState extends State<DetailPage> {
                       )
                     ],
                   ),
-                  IconAndText(nameIcon: Icons.palette, iconText: 'black'),
+                  IconAndText(
+                    nameIcon: Icons.palette,
+                    iconText: 'black',
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -128,7 +134,9 @@ class _DetailPageState extends State<DetailPage> {
                       Text(
                         "\$124.00",
                         style: Theme.of(context).textTheme.headline5.copyWith(
-                            fontWeight: FontWeight.bold, fontSize: 17),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            ),
                       )
                     ],
                   ),
@@ -137,13 +145,15 @@ class _DetailPageState extends State<DetailPage> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.13,
                     child: Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi. Vestibulum ut Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi."),
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi. Vestibulum ut Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet turpis nisi.",
+                    ),
                   ),
                   Container(
                     alignment: Alignment.topLeft,
                     padding: EdgeInsets.only(top: 15),
-                    child:
-                        Text("Lorem ipsum dolor sit amet, consectetur adipi"),
+                    child: Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipi",
+                    ),
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 40),
@@ -161,15 +171,17 @@ class _DetailPageState extends State<DetailPage> {
                         children: <Widget>[
                           Text(
                             "ADD TO",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyText1
-                                .copyWith(
-                                    color: Theme.of(context).primaryColor),
+                            style:
+                                Theme.of(context).textTheme.bodyText1.copyWith(
+                                      color: Theme.of(context).primaryColor,
+                                    ),
                           ),
                           SizedBox(width: 3),
-                          Icon(Icons.enhanced_encryption,
-                              size: 18, color: Theme.of(context).primaryColor)
+                          Icon(
+                            Icons.enhanced_encryption,
+                            size: 18,
+                            color: Theme.of(context).primaryColor,
+                          )
                         ],
                       ),
                     ),
@@ -233,7 +245,10 @@ class TriangleClipper extends CustomClipper<Path> {
 class IconAndText extends StatelessWidget {
   final IconData nameIcon;
   final String iconText;
-  IconAndText({this.nameIcon, this.iconText});
+  IconAndText({
+    this.nameIcon,
+    this.iconText,
+  });
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -247,10 +262,9 @@ class IconAndText extends StatelessWidget {
         ),
         Text(
           iconText,
-          style: Theme.of(context)
-              .textTheme
-              .caption
-              .copyWith(color: Theme.of(context).primaryColorDark),
+          style: Theme.of(context).textTheme.caption.copyWith(
+                color: Theme.of(context).primaryColorDark,
+              ),
         )
       ],
     );
